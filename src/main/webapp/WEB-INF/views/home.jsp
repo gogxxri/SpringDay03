@@ -13,7 +13,9 @@
 <hr>
 <ul>
 	<li><a href="boardList">게시판 목록</a></li>
-	<li><a href="boardWriteForm">게시글쓰기</a></li>
+	<li><a href="boardWriteForm">게시글 쓰기</a></li>
+	<li><a href="userList">사용자 목록</a></li>
+	<li><a href="userWrite">사용자 추가</a></li>
 </ul>
 </body>
 </html>

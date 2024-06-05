@@ -7,5 +7,5 @@
 
 	<!-- view-controller.xml -->
 
-	<mvc:view-controller path="/boardWriteForm" view-name="board_write"/>
+	<mvc:view-controller path="/boardWriteForm" view-name="board/write"/>
 </beans>

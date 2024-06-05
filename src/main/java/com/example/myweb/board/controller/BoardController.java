@@ -36,7 +36,7 @@ public class BoardController {
 		List<BoardVO> boardList = boardService.getList(null);
 		model.addAttribute("boardList", boardList);
 		
-		return "board_list";
+		return "board/list";
 	}
 	
 	@RequestMapping(value="/boardDetail", method=RequestMethod.GET)
@@ -48,7 +48,7 @@ public class BoardController {
 		BoardVO board = boardService.getOne(vo);
 		model.addAttribute("board", board);
 		
-		return "board_detail";
+		return "board/detail";
 	}
 	
 	@RequestMapping(value="/boardUpdate", method=RequestMethod.GET)
@@ -59,7 +59,7 @@ public class BoardController {
 		BoardVO board = boardService.getOne(vo);
 		model.addAttribute("board", board);
 		
-		return "board_update";
+		return "board/update";
 	}
 	
 	/*@RequestMapping(value="/boardUpdate", method=RequestMethod.POST)
@@ -105,5 +105,4 @@ public class BoardController {
 		
 		return "redirect:boardList";
 	}
-	
 }
