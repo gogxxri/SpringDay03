@@ -7,19 +7,25 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
-
-	<h1>사용자 목록</h1>
-	<c:forEach var="user" items="${userList }">
-		<p>
-
-			<a href="userDetail?id=${board.id }">
-				<c:out value="${user.name }"></c:out>
-			<a href="userDelete?id=${board.id }">글삭제</a>
-		</p>
-	</c:forEach>
-
-<hr>
-<a href="userWriteForm">사용자 추가</a>
-</body>
+	<body>
+		<h1>멤버리스트</h1>
+		
+		<table border="1">
+		<tr>
+			<th>ID</th><th>Password</th><th>Name</th><th>Role</th>
+		</tr>
+		<c:forEach var="user" items="${userList}">
+		<tr>
+			<td>${user.id}</td>
+			<td>${user.password}</td>
+			<td><a href="detail.do?id=${user.id}">${user.name}</a></td>
+			<td>${user.role}</td>
+		</tr>
+		</c:forEach>
+		</table>
+		<ul>
+			<li><a href="/myapp">홈으로 돌아가기</a></li>
+			<li><a href="userWrite">회원정보입력</a></li>
+		</ul>
+	</body>
 </html>

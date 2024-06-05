@@ -23,40 +23,41 @@ public class UserController {
 	@Resource(name="userService")
 	private UserService userService;
 	
-	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
+	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 	
 	@RequestMapping(value="/userList", method=RequestMethod.GET)
-	public String boardList(Locale locale, Model model) throws SQLException {
+	public String userList(Locale locale, Model model) throws SQLException {
 		
+		System.out.println("Get/userList ...");
 		//System.out.println(ds.getConnection());
 		//Connection conn = jdbcUtil.getConnection();
 		//System.out.println(conn);
 		
-		List<UserVO> boardList = userService.getList(null);
-		model.addAttribute("boardList", boardList);
-		
+		List<UserVO> userList = userService.getUserList();
+		model.addAttribute("userList", userList);
+		System.out.println(userList);
 		return "user/list";
 	}
 	
 	@RequestMapping(value="/userDetail", method=RequestMethod.GET)
-	public String boardDetail(@RequestParam("id") String id, Model model) throws SQLException {
+	public String userDetail(@RequestParam("id") String id, Model model) throws SQLException {
 		//System.out.println("boardDetail >>>> seq : " + seq);
 		
 		UserVO vo = new UserVO();
 		vo.setId(id);
 		UserVO user = userService.getOne(vo);
-		model.addAttribute("board", user);
+		model.addAttribute("user", user);
 		
 		return "user/detail";
 	}
 	
 	@RequestMapping(value="/userUpdate", method=RequestMethod.GET)
-	public String boardUpdate(@RequestParam("id") String id, Model model) {
+	public String userUpdate(@RequestParam("id") String id, Model model) {
 		
 		UserVO vo = new UserVO();
 		vo.setId(id);
-		UserVO board = userService.getOne(vo);
-		model.addAttribute("board", board);
+		UserVO user = userService.getOne(vo);
+		model.addAttribute("user", user);
 		
 		return "user/update";
 	}
@@ -73,7 +74,7 @@ public class UserController {
 	}*/
 	
 	@RequestMapping(value="/userUpdate", method=RequestMethod.POST)
-	public String boardUpdate2(UserVO vo, Model model) {
+	public String userUpdate2(UserVO vo, Model model) {
 		
 		//System.out.println(vo);
 		userService.update(vo);
@@ -82,12 +83,12 @@ public class UserController {
 	}
 	
 	@RequestMapping(value="/userWrite", method=RequestMethod.GET)
-	public String boardWrite(UserVO vo) {
+	public String userWrite(UserVO vo) {
 		return "user/write";
 	}
 	
 	@RequestMapping(value="/userWrite", method=RequestMethod.POST)
-	public String boardWriteOk(UserVO vo) {
+	public String userWriteOk(UserVO vo) {
 		
 		//System.out.println("vo ===> " + vo);
 		
@@ -97,7 +98,7 @@ public class UserController {
 	}
 	
 	@RequestMapping(value="/userDelete", method=RequestMethod.GET)
-	public String boardDelete(UserVO vo) {
+	public String userDelete(UserVO vo) {
 		
 		userService.delete(vo);
 		

@@ -10,8 +10,8 @@
 <body>
 
 	<h1>글 상세보기</h1>
-	<a href="userList">글목록</a>
-	<a href="userUpdate?id=${board.id }">글수정</a>
-	<a href="userDelete?id=${board.id }">글삭제</a>
+	<a href="userList">사용자 목록</a>
+	<a href="userUpdate?id=${user.id }">사용자 정보 수정</a>
+	<a href="userDelete?id=${user.id }">사용자 정보 삭제</a>
 </body>
 </html>

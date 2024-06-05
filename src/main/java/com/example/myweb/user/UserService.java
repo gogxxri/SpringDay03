@@ -6,11 +6,9 @@ import com.example.myweb.board.BoardVO;
 
 
 public interface UserService {
-
-	public List<UserVO> getList(Object object);
 	
 	UserVO getOne(UserVO vo);
-	List<UserVO> getList(UserVO vo);
+	List<UserVO> getUserList();
 	
 	void insert(UserVO vo);
 	void update(UserVO vo);
