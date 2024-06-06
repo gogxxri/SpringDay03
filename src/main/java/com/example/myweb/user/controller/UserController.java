@@ -1,8 +1,10 @@
 package com.example.myweb.user.controller;
 
 import java.sql.SQLException;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -14,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.myweb.board.controller.BoardController;
 import com.example.myweb.user.UserService;
 import com.example.myweb.user.UserVO;
 
@@ -61,8 +62,8 @@ public class UserController {
 		
 		return "user/update";
 	}
-	
-	/*@RequestMapping(value="/userUpdate", method=RequestMethod.POST)
+	/*
+	@RequestMapping(value="/userUpdate", method=RequestMethod.POST)
 	public String boardUpdate2(@RequestParam Map<String, String> params, Model model) {
 		
 		Iterator it = params.entrySet().iterator();
@@ -71,7 +72,8 @@ public class UserController {
 		}
 		
 		return "redirect:userList";
-	}*/
+	}
+	*/
 	
 	@RequestMapping(value="/userUpdate", method=RequestMethod.POST)
 	public String userUpdate2(UserVO vo, Model model) {
@@ -90,7 +92,7 @@ public class UserController {
 	@RequestMapping(value="/userWrite", method=RequestMethod.POST)
 	public String userWriteOk(UserVO vo) {
 		
-		//System.out.println("vo ===> " + vo);
+		System.out.println("vo ===> " + vo);
 		
 		userService.insert(vo);
 		

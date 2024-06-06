@@ -22,6 +22,7 @@ public class BoardServiceImpl implements BoardService {
 		//logAdvice.printLog();
 		return boardDao.getBoard(vo);
 	}
+	
 
 	@Override
 	public List<BoardVO> getList(BoardVO vo) {

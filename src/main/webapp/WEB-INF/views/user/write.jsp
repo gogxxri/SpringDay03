@@ -9,7 +9,7 @@
 	<body>
 	
 		<h1>사용자 정보 입력 페이지</h1>
-		<form action="./input.do" method="post">
+		<form action="userWrite" method="post">
 			<table border ="1">
 				<tr>
 					<th>ID</th>
@@ -31,5 +31,8 @@
 			<br/>
 		    <input type="submit" value="save"/>
 		</form>
+		<ul>
+			<li><a href="/myweb">홈으로 돌아가기</a></li>
+		</ul>
 	</body>
 </html>

@@ -19,8 +19,7 @@ public class UserDAO {
 	
 	final String SQL_GET = "select * from users where id=?";
 	final String SQL_LIST = "select * from users order by id desc";
-	final String SQL_INSERT = "insert into users(id, password, name, role) " +
-						"values(?,?,?,?)";
+	final String SQL_INSERT = "insert into users(id, password, name, role) values(?,?,?,?)";
 	final String SQL_UPDATE = "update users set password=?, name=?, role=? where id=?";
 	final String SQL_DELETE = "delete from users where id=?";
 	
@@ -33,7 +32,7 @@ public class UserDAO {
 	// 글수정
 	public void updateUser(UserVO vo) {
 		System.out.println("===> updateUser() - UserDAO기능 처리");
-		jdbcTemplate.update(SQL_UPDATE, vo.getPassword(), vo.getName(), vo.getRole());
+		jdbcTemplate.update(SQL_UPDATE, vo.getPassword(), vo.getName(), vo.getRole(), vo.getId());
 	}
 	
 	// 글삭제
@@ -67,10 +66,10 @@ public class UserDAO {
 	
 	// 유저 목록 조회
 	public List<UserVO> getUserList() {
-		System.out.println("===> getUserList() - UserDAO 기능 처리");
-		UserMapper rowMapper = new UserMapper();
-		List<UserVO> userList = jdbcTemplate.query(SQL_LIST, rowMapper);
-		System.out.println(userList);
-		return userList;
+	    System.out.println("===> getUserList() - UserDAO 기능 처리");
+	    UserMapper rowMapper = new UserMapper();
+	    List<UserVO> userList = jdbcTemplate.query(SQL_LIST, rowMapper);
+	    System.out.println("User List: " + userList);
+	    return userList;
 	}
 }

@@ -18,13 +18,13 @@
 		<tr>
 			<td>${user.id}</td>
 			<td>${user.password}</td>
-			<td><a href="detail.do?id=${user.id}">${user.name}</a></td>
+			<td><a href="userDetail?id=${user.id}">${user.name}</a></td>
 			<td>${user.role}</td>
 		</tr>
 		</c:forEach>
 		</table>
 		<ul>
-			<li><a href="/myapp">홈으로 돌아가기</a></li>
+			<li><a href="/myweb">홈으로 돌아가기</a></li>
 			<li><a href="userWrite">회원정보입력</a></li>
 		</ul>
 	</body>

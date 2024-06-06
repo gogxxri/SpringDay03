@@ -16,8 +16,8 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public UserVO getOne(UserVO vo) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return userDao.getUser(vo);
 	}
 	
 
@@ -35,19 +35,18 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public void insert(UserVO vo) {
-		// TODO Auto-generated method stub
-		
+	    userDao.insertUser(vo); 
 	}
 
 	@Override
 	public void update(UserVO vo) {
-		// TODO Auto-generated method stub
+		userDao.updateUser(vo);
 		
 	}
 
 	@Override
 	public void delete(UserVO vo) {
-		// TODO Auto-generated method stub
+		userDao.deleteUser(vo);
 		
 	}
 

@@ -9,7 +9,14 @@
 </head>
 <body>
 
-	<h1>글 상세보기</h1>
+	<h1>유저 정보 상세보기</h1>
+	<table border="1">
+		<tr><th>ID</th><td>${user.id}</td></tr>
+		<tr><th>PASSWORD</th><td>${user.password}</td></tr>
+		<tr><th>NAME</th><td>${user.name}</td></tr>
+		<tr><th>ROLE</th><td>${user.role}</td></tr>
+	</table>
+	<br/>
 	<a href="userList">사용자 목록</a>
 	<a href="userUpdate?id=${user.id }">사용자 정보 수정</a>
 	<a href="userDelete?id=${user.id }">사용자 정보 삭제</a>
